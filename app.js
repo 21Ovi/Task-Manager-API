@@ -6,15 +6,10 @@ require("dotenv").config({ path: "./.env" });
 const app = express();
 
 //middleware
-
+app.use(express.static("./public"));
 app.use(express.json());
 
 // routes
-
-app.get("/hello", (req, res) => {
-  res.send("Hello World");
-});
-
 app.use("/api/v1/tasks", tasks);
 
 const port = 3000;
